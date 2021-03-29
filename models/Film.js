@@ -31,8 +31,10 @@ let film_validation_schema={
     seances:joi.array().items({
                                 id:joi.string()
                               }),
-    acteurs:joi.array().items(joi.string().min(2).max(20)),
+    acteurs:joi.array().items(joi.string().min(3).max(20)),
 }
+
+
 function validate_update_film(body){
     return joi.validate(body,film_validation_schema_update);
 }
